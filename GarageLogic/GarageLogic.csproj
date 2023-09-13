@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="Energy\ElectricEnergySystem.cs" />
     <Compile Include="Energy\FuelEnergySystem.cs" />
     <Compile Include="Energy\IEnergySystem.cs" />

@@ -1,0 +1,44 @@
+# Visual Studio files
+.vscode/
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.sln.docstates
+
+# NuGet packages
+packages/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Ll]og/
+[Ll]ogs/
+[Ll][Oo][Gg][Ss]/
+
+# Visual Studio 2019 config folder
+.vs2019/
+
+# Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

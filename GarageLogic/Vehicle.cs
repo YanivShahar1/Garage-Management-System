@@ -10,7 +10,7 @@ namespace GarageLogic
     {
         private IEnergySystem energySystem;
 
-        protected Vehicle(IEnergySystem energySystem)
+        public Vehicle(IEnergySystem energySystem)
         {
             this.energySystem = energySystem;
         }
