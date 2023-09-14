@@ -36,9 +36,10 @@
     <Compile Include="Energy\ElectricEnergySystem.cs" />
     <Compile Include="Energy\FuelEnergySystem.cs" />
     <Compile Include="eVehicleStateInGarage.cs" />
+    <Compile Include="Info\PhoneNumber.cs" />
     <Compile Include="VehicleFactory.cs" />
-    <Compile Include="Vehicles\OwnerInfo.cs" />
-    <Compile Include="Vehicles\VehicleInfo.cs" />
+    <Compile Include="Info\OwnerInfo.cs" />
+    <Compile Include="Info\VehicleInfo.cs" />
     <Compile Include="Vehicles\Car\Car.cs" />
     <Compile Include="Energy\EnergySystem.cs" />
     <Compile Include="Vehicles\Car\ElectricCar.cs" />
@@ -49,6 +50,9 @@
     <Compile Include="Vehicles\Vehicle.cs" />
     <Compile Include="eVehicleType.cs" />
     <Compile Include="Vehicles\Wheel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
