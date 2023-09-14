@@ -32,12 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
     <Compile Include="Energy\ElectricEnergySystem.cs" />
     <Compile Include="Energy\FuelEnergySystem.cs" />
-    <Compile Include="Energy\IEnergySystem.cs" />
-    <Compile Include="Vehicle.cs" />
+    <Compile Include="eVehicleStateInGarage.cs" />
+    <Compile Include="VehicleFactory.cs" />
+    <Compile Include="Vehicles\Car.cs" />
+    <Compile Include="Energy\EnergySystem.cs" />
+    <Compile Include="Vehicles\CarBuildercs.cs" />
+    <Compile Include="Vehicles\Motorcycle.cs" />
+    <Compile Include="Vehicles\Truck.cs" />
+    <Compile Include="Vehicles\Vehicle.cs" />
     <Compile Include="eVehicleType.cs" />
+    <Compile Include="Vehicles\Wheel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

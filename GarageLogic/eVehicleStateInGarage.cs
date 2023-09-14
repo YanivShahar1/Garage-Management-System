@@ -5,11 +5,10 @@ using System.Text;
 
 namespace GarageLogic.Enums
 {
-    public enum VehicleType
+    public enum eVehicleStateInGarage
     {
-        Car,
-        Motorcycle,
-        Truck
+        UnderRepair,
+        Fixed,
+        Paid
     }
-
 }
