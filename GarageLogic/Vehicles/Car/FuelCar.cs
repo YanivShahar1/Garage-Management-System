@@ -8,7 +8,13 @@ namespace GarageLogic.Vehicles
         private const float defaultMaxFuelCapacity = 46.0f;
 
         public FuelCar(string model, int year, string licenseNumber, eColor color, eNumberOfDoors numberOfDoors)
-            : base(model, year, licenseNumber, new FuelEnergySystem(defaultMaxFuelCapacity,defaultFuelType), color, numberOfDoors)
+            : base(
+                  model,
+                  year,
+                  licenseNumber,
+                  new FuelEnergySystem(defaultMaxFuelCapacity,defaultFuelType),
+                  color,
+                  numberOfDoors)
         {
         }
     }
