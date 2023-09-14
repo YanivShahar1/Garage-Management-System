@@ -7,13 +7,21 @@ namespace GarageLogic.Vehicles
 {
     public class Wheel
     {
-        public string Manufacturer { get; }
+        public string Manufacturer { get; private set; } = "Unknown";
         public float CurrentAirPressure { get; private set; }
         public float MaxAirPressure { get; }
 
-        public Wheel(string manufacturer, float maxAirPressure)
+        public void SetManufacturer(string manufacturer)
         {
-            Manufacturer = manufacturer ?? throw new ArgumentNullException(nameof(manufacturer), "Manufacturer cannot be null.");
+            if (string.IsNullOrWhiteSpace(manufacturer))
+            {
+                throw new ArgumentException("Manufacturer name cannot be null or empty.");
+            }
+
+            Manufacturer = manufacturer;
+        }
+        public Wheel(float maxAirPressure)
+        {
             MaxAirPressure = maxAirPressure;
             CurrentAirPressure = 0;
         }

@@ -37,6 +37,7 @@
     <Compile Include="Energy\FuelEnergySystem.cs" />
     <Compile Include="eVehicleStateInGarage.cs" />
     <Compile Include="VehicleFactory.cs" />
+    <Compile Include="Vehicles\OwnerInfo.cs" />
     <Compile Include="Vehicles\VehicleInfo.cs" />
     <Compile Include="Vehicles\Car\Car.cs" />
     <Compile Include="Energy\EnergySystem.cs" />

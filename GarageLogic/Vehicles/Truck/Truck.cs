@@ -8,23 +8,30 @@ namespace GarageLogic.Vehicles
 {
     public class Truck : Vehicle
     {
+        private const int NumberOfWheels = 14;
+        private const float MaxAirPressure = 26.0f;
         public bool ContainsDangerousSubstances { get; }
         public double CargoVolume { get; } // Representing cargo volume in cubic meters.
 
-        internal Truck(string model, int year, string licenseNumber, EnergySystem energySystem, bool containsDangerousSubstances, double cargoVolume)
-            : base(model, year, licenseNumber, energySystem)
+        internal Truck(VehicleInfo vehicleInfo, EnergySystem energySystem, bool containsDangerousSubstances, double cargoVolume)
+            : base(vehicleInfo, energySystem)
         {
             ContainsDangerousSubstances = containsDangerousSubstances;
             CargoVolume = cargoVolume;
         }
 
-        public override int NumberOfWheels => 6; // Typically, a truck has 6 wheels.
 
-        public override List<Wheel> Wheels { get; } = new List<Wheel>(); // You can initialize this as needed or provide methods to add wheels.
 
-        public override string ToString()
+        public override List<Wheel> Wheels { get; } = InitializeTruckWheels();
+
+        private static List<Wheel> InitializeTruckWheels()
         {
-            return $"{Year} {Model} (License: {LicenseNumber}) - Cargo Volume: {CargoVolume} cubic meters";
+            List<Wheel> wheels = new List<Wheel>();
+            for (int i = 0; i < NumberOfWheels; i++)
+            {
+                wheels.Add(new Wheel(maxAirPressure: MaxAirPressure));
+            }
+            return wheels;
         }
     }
 }

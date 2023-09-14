@@ -23,20 +23,34 @@ namespace GarageLogic.Vehicles
             Four = 4,
             Five = 5
         }
-
+        private const int numberOfRegularWheels = 4;
+        private const int numberOfReserveWheels = 1;
+        private const float maxAirPressure = 33.0f;
         public eColor Color { get; set; }
         public eNumberOfDoors NumberOfDoors { get; set; }
 
-        internal Car(string model, int year, string licenseNumber, EnergySystem energySystem, eColor color, eNumberOfDoors numberOfDoors)
-            : base(model, year, licenseNumber, energySystem)
+        internal Car(VehicleInfo vehicleInfo, EnergySystem energySystem, eColor color, eNumberOfDoors numberOfDoors)
+            : base(vehicleInfo, energySystem)
         {
             Color = color;
             NumberOfDoors = numberOfDoors;
         }
 
-        // Override the abstract members from the Vehicle class
-        public override int NumberOfWheels => 5; // Typically, a car has 4 wheels and one backup wheel.
+        public override List<Wheel> Wheels { get; } = InitializeCarWheels();
 
-        public override List<Wheel> Wheels { get; } = new List<Wheel>(); // You can initialize this as needed or provide methods to add wheels.
+        private static List<Wheel> InitializeCarWheels()
+        {
+            List<Wheel> wheels = new List<Wheel>();
+            for (int i = 0; i < numberOfRegularWheels; i++)
+            {
+                wheels.Add(new Wheel(maxAirPressure: maxAirPressure));
+            }
+            // Add the reserve wheel
+            for (int i = 0; i < numberOfReserveWheels; i++)
+            {
+                wheels.Add(new Wheel(maxAirPressure: maxAirPressure));
+            }
+            return wheels;
+        }
     }
 }
