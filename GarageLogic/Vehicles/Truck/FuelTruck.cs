@@ -14,7 +14,11 @@ namespace GarageLogic.Vehicles
         private const float defaultMaxFuelCapacity = 135.0f;
 
         public FuelTruck(VehicleInfo vehicleInfo, bool containDangerousSubstances, float cargo)
-            : base(vehicleInfo, new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType), containDangerousSubstances, cargo)
+            : base(
+                  vehicleInfo,
+                  new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType),
+                  containDangerousSubstances,
+                  cargo)
         {
         }
     }
