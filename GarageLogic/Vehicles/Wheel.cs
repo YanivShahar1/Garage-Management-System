@@ -36,20 +36,5 @@ namespace GarageLogic.Vehicles
         }
     }
 
-    public abstract class Vehicle
-    {
-        // Common properties for all vehicles.
-        public List<Wheel> Wheels { get; }
-
-        protected Vehicle()
-        {
-            Wheels = new List<Wheel>();
-        }
-
-        // Other common properties and methods.
-    }
-
-    // Define other vehicle classes (Car, Motorcycle, Truck) and their specific properties/methods.
-
 
 }

@@ -14,7 +14,7 @@ namespace GarageLogic.Vehicles
         public EnergySystem EnergySystem { get; }
         public abstract List<Wheel> Wheels { get; }
 
-        protected Vehicle(string model, int year, string licenseNumber, EnergySystem energySystem)
+        internal Vehicle(string model, int year, string licenseNumber, EnergySystem energySystem)
         {
             Model = model ?? throw new ArgumentNullException(nameof(model), "Model cannot be null.");
             Year = year;

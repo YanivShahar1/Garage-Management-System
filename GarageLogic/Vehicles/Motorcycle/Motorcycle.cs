@@ -5,11 +5,14 @@ using System.Text;
 
 namespace GarageLogic.Vehicles
 {
-    public class Car : Vehicle
+    public class Motorcycle : Vehicle
     {
-        public Car()
+        public enum eMotorcycleLicenseType
         {
-               
+            A1,
+            A2,
+            AA,
+            B1
         }
     }
 }
