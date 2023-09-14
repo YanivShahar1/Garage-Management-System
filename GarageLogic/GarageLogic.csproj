@@ -32,15 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EnumExtensions.cs" />
     <Compile Include="Energy\ElectricEnergySystem.cs" />
     <Compile Include="Energy\FuelEnergySystem.cs" />
     <Compile Include="eVehicleStateInGarage.cs" />
     <Compile Include="VehicleFactory.cs" />
-    <Compile Include="Vehicles\Car.cs" />
+    <Compile Include="Vehicles\OwnerInfo.cs" />
+    <Compile Include="Vehicles\VehicleInfo.cs" />
+    <Compile Include="Vehicles\Car\Car.cs" />
     <Compile Include="Energy\EnergySystem.cs" />
-    <Compile Include="Vehicles\CarBuildercs.cs" />
-    <Compile Include="Vehicles\Motorcycle.cs" />
-    <Compile Include="Vehicles\Truck.cs" />
+    <Compile Include="Vehicles\Car\ElectricCar.cs" />
+    <Compile Include="Vehicles\Car\FuelCar.cs" />
+    <Compile Include="Vehicles\Truck\FuelTruck.cs" />
+    <Compile Include="Vehicles\Motorcycle\Motorcycle.cs" />
+    <Compile Include="Vehicles\Truck\Truck.cs" />
     <Compile Include="Vehicles\Vehicle.cs" />
     <Compile Include="eVehicleType.cs" />
     <Compile Include="Vehicles\Wheel.cs" />

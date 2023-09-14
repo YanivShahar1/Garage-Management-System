@@ -1,11 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using GarageLogic.Vehicles;
 
 namespace GarageLogic
 {
-    class VehicleFactory
+    public static class VehicleFactory
     {
+        public static Vehicle CreateVehicle(eVehicleType vehicleType)
+        {
+            switch (vehicleType)
+            {
+                case eVehicleType.Car:
+                    return new Car();
+                case eVehicleType.Truck:
+                    return new Truck();
+                // ... handle other vehicle types as they're added
+                default:
+                    throw new ArgumentException($"Unsupported vehicle type: {vehicleType}", nameof(vehicleType));
+            }
+        }
     }
 }
