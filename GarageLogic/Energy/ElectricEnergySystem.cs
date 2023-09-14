@@ -2,11 +2,16 @@
 
 namespace GarageLogic.Energy
 {
-    public class ElectricEnergySystem : IEnergySystem
+    public class ElectricEnergySystem : EnergySystem
     {
-        public void SupplyEnergy()
+        public ElectricEnergySystem(float maxBattery) : base(maxBattery) { }
+        public void Charge(float amount)
         {
-            Console.WriteLine("Supplying electric energy...");
+            if (CurrentEnergy + amount > MaxEnergyCapacity)
+            {
+                throw new InvalidOperationException("Cannot overcharge the battery.");
+            }
+            CurrentEnergy += amount;
         }
     }
 }
