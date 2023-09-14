@@ -1,5 +1,5 @@
 ﻿using GarageLogic.Energy;
-
+using GarageLogic.Info;
 namespace GarageLogic.Vehicles
 {
     public class FuelCar : Car
