@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using GarageLogic.Energy;
+using GarageLogic.Info;
 
 namespace GarageLogic.Vehicles
 {
