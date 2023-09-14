@@ -3,13 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GarageLogic.Enums
+namespace GarageLogic
 {
-    public enum VehicleType
+    public enum eVehicleType
     {
-        Car,
-        Motorcycle,
-        Truck
+        [EnumExtensions.DisplayName("Fuel Car")]
+        FuelCar,
+
+        [EnumExtensions.DisplayName("Electric Car")]
+        ElectricCar,
+
+        [EnumExtensions.DisplayName("Fuel Motorcycle")]
+        FuelMotorcycle,
+
+        [EnumExtensions.DisplayName("Electric Motorcycle")]
+        ElectricMotorcycle,
+
+        [EnumExtensions.DisplayName("Fuel Truck")]
+        FuelTruck
     }
+
 
 }
