@@ -9,10 +9,10 @@ namespace GarageLogic.Vehicles
         public ElectricCar(VehicleInfo vehicleInfo, eColor color, eNumberOfDoors numberOfDoors)
             : base(
                   vehicleInfo,
-                  new ElectricEnergySystem(defaultMaxBatteryCapacity),
                   color,
                   numberOfDoors)
         {
+            this.EnergySystem = new ElectricEnergySystem(defaultMaxBatteryCapacity);
         }
     }
 }

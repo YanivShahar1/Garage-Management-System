@@ -29,11 +29,12 @@ namespace GarageLogic.Vehicles
         public eColor Color { get; set; }
         public eNumberOfDoors NumberOfDoors { get; set; }
 
-        protected Car(VehicleInfo vehicleInfo, EnergySystem energySystem, eColor color, eNumberOfDoors numberOfDoors)
-            : base(vehicleInfo, energySystem)
+        protected Car(VehicleInfo vehicleInfo, eColor color, eNumberOfDoors numberOfDoors)
+            :base(vehicleInfo)
         {
-            Color = color;
-            NumberOfDoors = numberOfDoors;
+            this.Color = color;
+            this.NumberOfDoors = numberOfDoors;
+            
         }
 
         public override List<Wheel> Wheels { get; } = InitializeCarWheels();

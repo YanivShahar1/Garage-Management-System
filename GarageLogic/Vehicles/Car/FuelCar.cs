@@ -10,10 +10,10 @@ namespace GarageLogic.Vehicles
         public FuelCar(VehicleInfo vehicleInfo, eColor color, eNumberOfDoors numberOfDoors)
             : base(
                   vehicleInfo,
-                  new FuelEnergySystem(defaultMaxFuelCapacity,defaultFuelType),
                   color,
                   numberOfDoors)
         {
+            this.EnergySystem = new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType);
         }
     }
 }
