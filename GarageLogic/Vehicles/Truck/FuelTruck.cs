@@ -16,10 +16,10 @@ namespace GarageLogic.Vehicles
         public FuelTruck(VehicleInfo vehicleInfo, bool containDangerousSubstances, float cargo)
             : base(
                   vehicleInfo,
-                  new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType),
                   containDangerousSubstances,
                   cargo)
         {
+            this.EnergySystem = new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType);
         }
     }
 }
