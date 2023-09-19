@@ -13,14 +13,12 @@ namespace GarageLogic.Vehicles
         public bool ContainsDangerousSubstances { get; }
         public double CargoVolume { get; } // Representing cargo volume in cubic meters.
 
-        internal Truck(VehicleInfo vehicleInfo, EnergySystem energySystem, bool containsDangerousSubstances, double cargoVolume)
+        protected Truck(VehicleInfo vehicleInfo, EnergySystem energySystem, bool containsDangerousSubstances, double cargoVolume)
             : base(vehicleInfo, energySystem)
         {
             ContainsDangerousSubstances = containsDangerousSubstances;
             CargoVolume = cargoVolume;
         }
-
-
 
         public override List<Wheel> Wheels { get; } = InitializeTruckWheels();
 

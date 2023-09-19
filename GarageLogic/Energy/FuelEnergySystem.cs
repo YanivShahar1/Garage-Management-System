@@ -10,6 +10,7 @@ namespace GarageLogic.Energy
             Octan95,
             Soler
         }
+
         public eFuelType TypeOfFuel { get; }
         public FuelEnergySystem(float maxFuel, eFuelType fuelType) : base(maxFuel)
         {

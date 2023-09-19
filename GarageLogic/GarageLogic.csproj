@@ -36,6 +36,7 @@
     <Compile Include="Energy\ElectricEnergySystem.cs" />
     <Compile Include="Energy\FuelEnergySystem.cs" />
     <Compile Include="eVehicleStateInGarage.cs" />
+    <Compile Include="Garage.cs" />
     <Compile Include="Info\PhoneNumber.cs" />
     <Compile Include="VehicleFactory.cs" />
     <Compile Include="Info\OwnerInfo.cs" />
@@ -44,6 +45,8 @@
     <Compile Include="Energy\EnergySystem.cs" />
     <Compile Include="Vehicles\Car\ElectricCar.cs" />
     <Compile Include="Vehicles\Car\FuelCar.cs" />
+    <Compile Include="Vehicles\Motorcycle\ElectricMotorcycle.cs" />
+    <Compile Include="Vehicles\Motorcycle\FuelMotorcycle.cs" />
     <Compile Include="Vehicles\Truck\FuelTruck.cs" />
     <Compile Include="Vehicles\Motorcycle\Motorcycle.cs" />
     <Compile Include="Vehicles\Truck\Truck.cs" />

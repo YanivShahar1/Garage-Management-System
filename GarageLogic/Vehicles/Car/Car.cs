@@ -29,7 +29,7 @@ namespace GarageLogic.Vehicles
         public eColor Color { get; set; }
         public eNumberOfDoors NumberOfDoors { get; set; }
 
-        internal Car(VehicleInfo vehicleInfo, EnergySystem energySystem, eColor color, eNumberOfDoors numberOfDoors)
+        protected Car(VehicleInfo vehicleInfo, EnergySystem energySystem, eColor color, eNumberOfDoors numberOfDoors)
             : base(vehicleInfo, energySystem)
         {
             Color = color;
