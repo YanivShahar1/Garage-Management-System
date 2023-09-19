@@ -12,7 +12,7 @@ namespace GarageLogic.Energy
         }
 
         public eFuelType TypeOfFuel { get; }
-        public FuelEnergySystem(float maxFuel, eFuelType fuelType) : base(maxFuel)
+        internal FuelEnergySystem(float maxFuel, eFuelType fuelType) : base(maxFuel)
         {
             TypeOfFuel = fuelType;
         }

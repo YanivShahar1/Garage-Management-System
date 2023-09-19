@@ -4,7 +4,7 @@ namespace GarageLogic.Energy
 {
     public class ElectricEnergySystem : EnergySystem
     {
-        public ElectricEnergySystem(float maxBattery) : base(maxBattery) { }
+        internal ElectricEnergySystem(float maxBattery) : base(maxBattery) { }
         public void Charge(float amount)
         {
             if (CurrentEnergy + amount > MaxEnergyCapacity)

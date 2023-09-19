@@ -7,8 +7,7 @@ namespace GarageLogic.Energy
     {
         public float CurrentEnergy { get; protected set; }
         public float MaxEnergyCapacity { get; protected set; }
-
-        public EnergySystem(float maxEnergyCapacity)
+        internal EnergySystem(float maxEnergyCapacity)
         {
             if (maxEnergyCapacity <= 0)
             {
