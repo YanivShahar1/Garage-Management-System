@@ -15,9 +15,9 @@ namespace GarageLogic.Vehicles
         public FuelMotorcycle(VehicleInfo vehicleInfo, eMotorcycleLicenseType licenseType)
             : base(
                   vehicleInfo,
-                  new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType),
                   licenseType)
         {
+            this.EnergySystem = new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType);
         }
 
     }

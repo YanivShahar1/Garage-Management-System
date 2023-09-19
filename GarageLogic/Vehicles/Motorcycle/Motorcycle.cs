@@ -21,8 +21,8 @@ namespace GarageLogic.Vehicles
         private const float MaxAirPressure = 31.0f;
         public eMotorcycleLicenseType LicenseType { get; set; }
 
-        protected Motorcycle(VehicleInfo vehicleInfo, EnergySystem energySystem, eMotorcycleLicenseType licenseType)
-            : base(vehicleInfo, energySystem)
+        protected Motorcycle(VehicleInfo vehicleInfo, eMotorcycleLicenseType licenseType)
+            : base(vehicleInfo)
         {
             LicenseType = licenseType;
         }

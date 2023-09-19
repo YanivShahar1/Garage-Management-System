@@ -14,9 +14,9 @@ namespace GarageLogic.Vehicles
         public ElectricMotorcycle(VehicleInfo vehicleInfo, eMotorcycleLicenseType licenseType)
             : base(
                   vehicleInfo,
-                  new ElectricEnergySystem(defaultMaxBatteryCapacity),
                   licenseType)
         {
+            this.EnergySystem = new ElectricEnergySystem(defaultMaxBatteryCapacity);
         }
     }
 }
