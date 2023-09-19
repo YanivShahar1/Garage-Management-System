@@ -29,10 +29,9 @@ namespace GarageLogic.Vehicles
         public eColor Color { get; set; }
         public eNumberOfDoors NumberOfDoors { get; set; }
 
-        protected Car(VehicleInfo vehicleInfo, eColor color, eNumberOfDoors numberOfDoors)
+        protected Car(VehicleInfo vehicleInfo, eNumberOfDoors numberOfDoors = eNumberOfDoors.Four)
             :base(vehicleInfo)
         {
-            this.Color = color;
             this.NumberOfDoors = numberOfDoors;
             
         }

@@ -2,7 +2,7 @@
 using System.Reflection;
 
 
-namespace GarageLogic
+namespace GarageLogic.Enums
 {
     public static class EnumExtensions
     {

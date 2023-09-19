@@ -32,15 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EnumExtensions.cs" />
+    <Compile Include="Enums\EnumExtensions.cs" />
     <Compile Include="Energy\ElectricEnergySystem.cs" />
     <Compile Include="Energy\FuelEnergySystem.cs" />
-    <Compile Include="eVehicleStateInGarage.cs" />
+    <Compile Include="Enums\eVehicleStateInGarage.cs" />
     <Compile Include="Garage.cs" />
     <Compile Include="Info\PhoneNumber.cs" />
-    <Compile Include="VehicleFactory.cs" />
     <Compile Include="Info\OwnerInfo.cs" />
     <Compile Include="Info\VehicleInfo.cs" />
+    <Compile Include="VehicleFactory.cs" />
     <Compile Include="Vehicles\Car\Car.cs" />
     <Compile Include="Energy\EnergySystem.cs" />
     <Compile Include="Vehicles\Car\ElectricCar.cs" />
@@ -51,11 +51,14 @@
     <Compile Include="Vehicles\Motorcycle\Motorcycle.cs" />
     <Compile Include="Vehicles\Truck\Truck.cs" />
     <Compile Include="Vehicles\Vehicle.cs" />
-    <Compile Include="eVehicleType.cs" />
+    <Compile Include="Enums\eVehicleType.cs" />
     <Compile Include="Vehicles\Wheel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Builders\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

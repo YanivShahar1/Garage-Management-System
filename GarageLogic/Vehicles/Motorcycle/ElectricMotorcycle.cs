@@ -11,10 +11,8 @@ namespace GarageLogic.Vehicles
     {
         private const float defaultMaxBatteryCapacity = 2.6f;
 
-        public ElectricMotorcycle(VehicleInfo vehicleInfo, eMotorcycleLicenseType licenseType)
-            : base(
-                  vehicleInfo,
-                  licenseType)
+        public ElectricMotorcycle(VehicleInfo vehicleInfo)
+            : base(vehicleInfo)
         {
             this.EnergySystem = new ElectricEnergySystem(defaultMaxBatteryCapacity);
         }

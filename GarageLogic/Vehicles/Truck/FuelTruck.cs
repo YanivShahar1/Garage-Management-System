@@ -13,11 +13,8 @@ namespace GarageLogic.Vehicles
         private const FuelEnergySystem.eFuelType defaultFuelType = FuelEnergySystem.eFuelType.Soler;
         private const float defaultMaxFuelCapacity = 135.0f;
 
-        public FuelTruck(VehicleInfo vehicleInfo, bool containDangerousSubstances, float cargo)
-            : base(
-                  vehicleInfo,
-                  containDangerousSubstances,
-                  cargo)
+        public FuelTruck(VehicleInfo vehicleInfo)
+            : base(vehicleInfo)
         {
             this.EnergySystem = new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType);
         }
