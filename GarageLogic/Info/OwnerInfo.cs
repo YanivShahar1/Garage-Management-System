@@ -5,12 +5,12 @@ namespace GarageLogic.Info
 {
     public class OwnerInfo
     {
-        public string OwnerName { get; }
-        public PhoneNumber OwnerPhoneNumber { get; }
+        public string _name { get; }
+        public PhoneNumber _phoneNumber { get; }
         public OwnerInfo(string ownerName, string ownerPhoneNumber)
         {
-            OwnerName = ownerName ?? throw new ArgumentNullException(nameof(ownerName), "Owner name cannot be null.");
-            OwnerPhoneNumber = new PhoneNumber(ownerPhoneNumber);
+            _name = ownerName ?? throw new ArgumentNullException(nameof(ownerName), "Owner name cannot be null.");
+            _phoneNumber = new PhoneNumber(ownerPhoneNumber);
         }
 
         private string GetCurrentCountryCode()

@@ -29,11 +29,11 @@ namespace GarageLogic
                     break;
 
                 case eVehicleType.ElectricMotorcycle:
-                    createdVehicle = new ElectricMotorcycle(vehicleInfo); 
+                    createdVehicle = new ElectricMotorcycle(vehicleInfo);
                     break;
 
                 case eVehicleType.FuelTruck:
-                    createdVehicle = new FuelTruck(vehicleInfo); 
+                    createdVehicle = new FuelTruck(vehicleInfo);
                     break;
 
                 default:
@@ -42,4 +42,6 @@ namespace GarageLogic
 
             return createdVehicle;
         }
+    }
+}
 

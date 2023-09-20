@@ -7,10 +7,9 @@ namespace GarageLogic.Vehicles
         private const FuelEnergySystem.eFuelType defaultFuelType = FuelEnergySystem.eFuelType.Octan95;
         private const float defaultMaxFuelCapacity = 46.0f;
 
-        public FuelCar(VehicleInfo vehicleInfo, eColor color = eColor.Blue , eNumberOfDoors numberOfDoors = eNumberOfDoors.Four)
+        public FuelCar(VehicleInfo vehicleInfo, eNumberOfDoors numberOfDoors = eNumberOfDoors.Four)
             : base(
                   vehicleInfo,
-                  color,
                   numberOfDoors)
         {
             this.EnergySystem = new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType);
