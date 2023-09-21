@@ -39,7 +39,7 @@
     <Compile Include="Energy\ElectricEnergySystem.cs" />
     <Compile Include="Energy\FuelEnergySystem.cs" />
     <Compile Include="Enums\eVehicleStateInGarage.cs" />
-    <Compile Include="Garage.cs" />
+    <Compile Include="GarageSystem.cs" />
     <Compile Include="Info\PhoneNumber.cs" />
     <Compile Include="Info\OwnerInfo.cs" />
     <Compile Include="Info\VehicleInfo.cs" />
