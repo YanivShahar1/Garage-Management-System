@@ -327,7 +327,6 @@ namespace GarageUI
             this.textBoxLicenseNumber.Name = "textBoxLicenseNumber";
             this.textBoxLicenseNumber.Size = new System.Drawing.Size(118, 30);
             this.textBoxLicenseNumber.TabIndex = 6;
-            this.textBoxLicenseNumber.Leave += new System.EventHandler(this.textBoxLicenseNumber_Leave);
             // 
             // label4
             // 

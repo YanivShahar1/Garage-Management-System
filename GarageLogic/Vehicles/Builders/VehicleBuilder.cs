@@ -8,7 +8,7 @@ namespace GarageLogic.Vehicles
 {
     public abstract class VehicleBuilder
     {
-        protected Vehicle Vehicle { get; set; }
+        public Vehicle Vehicle { get; protected set; }
 
         public VehicleBuilder(Vehicle vehicle)
         {
