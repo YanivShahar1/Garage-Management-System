@@ -57,7 +57,6 @@ namespace GarageUI
             this.label1.Size = new System.Drawing.Size(293, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vehicle Management System";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // AddVehicleButton
             // 
@@ -67,7 +66,7 @@ namespace GarageUI
             this.AddVehicleButton.TabIndex = 1;
             this.AddVehicleButton.Text = "Add Vehicle";
             this.AddVehicleButton.UseVisualStyleBackColor = true;
-            this.AddVehicleButton.Click += new System.EventHandler(this.button1_Click);
+            this.AddVehicleButton.Click += new System.EventHandler(this.AddVehicleButton_Click);
             // 
             // RemoveVehicleButton
             // 
@@ -105,7 +104,7 @@ namespace GarageUI
             this.SearchVehicleButton.Text = "Search for Vehicle";
             this.SearchVehicleButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,7 +115,7 @@ namespace GarageUI
             this.Controls.Add(this.RemoveVehicleButton);
             this.Controls.Add(this.AddVehicleButton);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

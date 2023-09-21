@@ -10,11 +10,9 @@ namespace GarageLogic.Vehicles
     {
         private const int NumberOfWheels = 14;
         private const float MaxAirPressure = 26.0f;
-        public bool ContainsDangerousSubstances { get; }
-        public double CargoVolume { get; } // Representing cargo volume in cubic meters.
+        public bool ContainsDangerousSubstances { get; internal set; }
+        public double CargoVolume { get; set; } // Representing cargo volume in cubic meters.
 
-        protected Truck(VehicleInfo vehicleInfo): base(vehicleInfo) { }
-        
         public override List<Wheel> Wheels { get; } = InitializeTruckWheels();
 
         private static List<Wheel> InitializeTruckWheels()

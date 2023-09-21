@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4E3E4EA0-B4DA-4365-8942-80D15D94A1B9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>GarageLogic</RootNamespace>
     <AssemblyName>GarageLogic</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Enums\EnumExtensions.cs" />
     <Compile Include="Energy\ElectricEnergySystem.cs" />
@@ -40,7 +43,11 @@
     <Compile Include="Info\PhoneNumber.cs" />
     <Compile Include="Info\OwnerInfo.cs" />
     <Compile Include="Info\VehicleInfo.cs" />
-    <Compile Include="VehicleFactory.cs" />
+    <Compile Include="Vehicles\Builders\CarBuilder.cs" />
+    <Compile Include="Vehicles\Builders\MotorcycleBuilder.cs" />
+    <Compile Include="Vehicles\Builders\TruckBuilder.cs" />
+    <Compile Include="Vehicles\Builders\VehicleBuilder.cs" />
+    <Compile Include="Vehicles\VehicleFactory.cs" />
     <Compile Include="Vehicles\Car\Car.cs" />
     <Compile Include="Energy\EnergySystem.cs" />
     <Compile Include="Vehicles\Car\ElectricCar.cs" />

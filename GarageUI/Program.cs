@@ -15,7 +15,7 @@ namespace GarageUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddVehicleForm());
+            Application.Run(new MainForm());
         }
     }
 }

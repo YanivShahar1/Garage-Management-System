@@ -4,12 +4,11 @@ namespace GarageLogic.Vehicles
 {
     public class ElectricCar : Car
     {
-        private const float defaultMaxBatteryCapacity = 5.2f;
+        public const float MaxBatteryCapacityKWh = 5.2f;
 
-        public ElectricCar(VehicleInfo vehicleInfo )
-            : base(vehicleInfo )
+        public ElectricCar()
         {
-            this.EnergySystem = new ElectricEnergySystem(defaultMaxBatteryCapacity);
+            this.EnergySystem = new ElectricEnergySystem(MaxBatteryCapacityKWh);
         }
     }
 }

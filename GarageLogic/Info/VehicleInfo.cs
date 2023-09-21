@@ -11,7 +11,7 @@ namespace GarageLogic.Info
         public int Year { get; }
         public string LicenseNumber { get; }
 
-        public VehicleInfo(string model, int year, string licenseNumber, string ownerName, string ownerPhone)
+        public VehicleInfo(string model, int year, string licenseNumber)
         {
             Model = model ?? throw new ArgumentNullException(nameof(model), "Model cannot be null.");
             Year = year;
