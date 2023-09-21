@@ -251,19 +251,19 @@ namespace GarageUI
         {
             return 2.2f;
         }
-        private void addButton_Click(object sender, EventArgs e)
+        private void addVehicle()
         {
             try
             {
                 eVehicleType selectedType = getSelectedVehicleType();
 
-                VehicleInfo vehicleInfo = getVehicleInfo();
-                OwnerInfo ownerInfo = getOwnerInfo();
-
                 Vehicle vehicle = VehicleFactory.CreateVehicle(selectedType);
+
                 float energyLevel = getCurrentEnergyLevel();
                 // Configure the vehicle using a builder pattern
                 VehicleBuilder builder = VehicleFactory.CreateBuilder(selectedType, vehicle);
+                
+                VehicleInfo vehicleInfo = getVehicleInfo();
                 builder.WithVehicleInfo(vehicleInfo);
 
                 if (vehicle is Car)
@@ -298,6 +298,8 @@ namespace GarageUI
 
                 // Add the vehicle to your garage management system or do other processing
                 // ...
+                OwnerInfo ownerInfo = getOwnerInfo();
+
 
                 // Clear the form or perform other post-addition actions
                 clearForm();
@@ -308,7 +310,15 @@ namespace GarageUI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            addVehicle();            
+        }
 
+        private void clearForm()
+        {
+            //TODO
         }
 
         private VehicleInfo getVehicleInfo()
