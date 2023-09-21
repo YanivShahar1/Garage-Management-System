@@ -23,18 +23,12 @@ namespace GarageLogic.Vehicles
             Four = 4,
             Five = 5
         }
+
         private const int numberOfRegularWheels = 4;
         private const int numberOfReserveWheels = 1;
         private const float maxAirPressure = 33.0f;
         public eColor Color { get; set; }
-        public eNumberOfDoors NumberOfDoors { get; set; }
-
-        protected Car(VehicleInfo vehicleInfo, eNumberOfDoors numberOfDoors = eNumberOfDoors.Four)
-            :base(vehicleInfo)
-        {
-            this.NumberOfDoors = numberOfDoors;
-            
-        }
+        public eNumberOfDoors NumberOfDoors { get; set; } = eNumberOfDoors.Four;
 
         public override List<Wheel> Wheels { get; } = InitializeCarWheels();
 
@@ -51,6 +45,11 @@ namespace GarageLogic.Vehicles
                 wheels.Add(new Wheel(maxAirPressure: maxAirPressure));
             }
             return wheels;
+        }
+
+        public static List<string> GetAvailableColors()
+        {
+            return Enum.GetNames(typeof(eColor)).ToList();
         }
     }
 }

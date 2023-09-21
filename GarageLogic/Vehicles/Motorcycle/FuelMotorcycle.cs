@@ -10,12 +10,11 @@ namespace GarageLogic.Vehicles
     public class FuelMotorcycle : Motorcycle
     {
         private const FuelEnergySystem.eFuelType defaultFuelType = FuelEnergySystem.eFuelType.Octan98;
-        private const float defaultMaxFuelCapacity = 6.4f;
+        public const float MaxFuelCapacityLiters = 6.4f;
 
-        public FuelMotorcycle(VehicleInfo vehicleInfo)
-            : base(vehicleInfo)
+        public FuelMotorcycle()
         {
-            this.EnergySystem = new FuelEnergySystem(defaultMaxFuelCapacity, defaultFuelType);
+            this.EnergySystem = new FuelEnergySystem(MaxFuelCapacityLiters, defaultFuelType);
         }
 
     }

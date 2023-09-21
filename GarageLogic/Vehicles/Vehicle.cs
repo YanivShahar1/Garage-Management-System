@@ -8,20 +8,23 @@ namespace GarageLogic.Vehicles
 {
     public abstract class Vehicle
     {
-        public VehicleInfo Info { get; }
+        public VehicleInfo Info { get; internal set; }
         public EnergySystem EnergySystem { get; protected set; }
         public abstract List<Wheel> Wheels { get; }
-
-        protected Vehicle(VehicleInfo vehicleInfo)
-        {
-            this.Info = vehicleInfo;
-        }
+<<<<<<< HEAD
+ 
         public void InflateWheels()
         {
             foreach (Wheel wheel in Wheels)
             {
                 wheel.InflateToMax();
             }
+=======
+
+        protected Vehicle(VehicleInfo vehicleInfo)
+        {
+            this.Info = vehicleInfo;
+>>>>>>> master
         }
 
     }

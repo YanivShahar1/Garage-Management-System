@@ -9,12 +9,11 @@ namespace GarageLogic.Vehicles
 {
     public class ElectricMotorcycle : Motorcycle
     {
-        private const float defaultMaxBatteryCapacity = 2.6f;
+        public const float MaxBatteryCapacityKWh = 2.6f;
 
-        public ElectricMotorcycle(VehicleInfo vehicleInfo)
-            : base(vehicleInfo)
+        public ElectricMotorcycle()
         {
-            this.EnergySystem = new ElectricEnergySystem(defaultMaxBatteryCapacity);
+            this.EnergySystem = new ElectricEnergySystem(MaxBatteryCapacityKWh);
         }
     }
 }

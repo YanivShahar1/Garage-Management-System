@@ -26,11 +26,10 @@ namespace GarageLogic.Vehicles
             }
             else
             {
-                InflateToMax();
-                throw new InvalidOperationException("Inflation exceeded the maximum air pressure. The wheel has been inflated to its maximum.");
-
+                throw new InvalidOperationException("Cannot inflate beyond the maximum air pressure.");
             }
         }
+
         public void InflateToMax()
         {
             CurrentAirPressure = MaxAirPressure;

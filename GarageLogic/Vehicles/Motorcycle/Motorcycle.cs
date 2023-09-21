@@ -21,7 +21,6 @@ namespace GarageLogic.Vehicles
         private const float MaxAirPressure = 31.0f;
         public eMotorcycleLicenseType LicenseType { get; set; }
 
-        protected Motorcycle(VehicleInfo vehicleInfo): base(vehicleInfo) { }
 
         public override List<Wheel> Wheels { get; } = InitializeMotorcycleWheels();
 
@@ -33,6 +32,11 @@ namespace GarageLogic.Vehicles
                 wheels.Add(new Wheel(maxAirPressure: MaxAirPressure));
             }
             return wheels;
+        }
+
+        public static List<string> GetAvailableLicenseType()
+        {
+            return Enum.GetNames(typeof(eMotorcycleLicenseType)).ToList();
         }
     }
 }
