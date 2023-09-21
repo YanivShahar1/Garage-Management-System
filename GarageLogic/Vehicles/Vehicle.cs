@@ -16,13 +16,6 @@ namespace GarageLogic.Vehicles
         {
             this.Info = vehicleInfo;
         }
-        public void InflateWheels()
-        {
-            foreach (Wheel wheel in Wheels)
-            {
-                wheel.InflateToMax();
-            }
-        }
 
     }
 }
