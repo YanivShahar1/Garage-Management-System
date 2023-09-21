@@ -6,11 +6,11 @@ using GarageLogic.Vehicles;
 
 namespace GarageLogic
 {
-    public class Garage
+    public class GarageSystem
     {
         private List<Vehicle> vehicles;
 
-        public Garage()
+        public GarageSystem()
         {
             vehicles = new List<Vehicle>();
         }
