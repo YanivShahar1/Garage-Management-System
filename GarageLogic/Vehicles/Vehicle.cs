@@ -11,6 +11,7 @@ namespace GarageLogic.Vehicles
         public VehicleInfo Info { get; internal set; }
         public EnergySystem EnergySystem { get; protected set; }
         public abstract List<Wheel> Wheels { get; }
+<<<<<<< HEAD
  
         public void InflateWheels()
         {
@@ -18,6 +19,12 @@ namespace GarageLogic.Vehicles
             {
                 wheel.InflateToMax();
             }
+=======
+
+        protected Vehicle(VehicleInfo vehicleInfo)
+        {
+            this.Info = vehicleInfo;
+>>>>>>> master
         }
 
     }
