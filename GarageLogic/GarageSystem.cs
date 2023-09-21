@@ -132,7 +132,7 @@ namespace GarageLogic
             }
         }
 
-        public OwnerInfo GetOwnerFullName(string licenseNumber)
+        public OwnerInfo GetOwnerInfo(string licenseNumber)
         {
             if (IsVehicleInGarage(licenseNumber))
             {

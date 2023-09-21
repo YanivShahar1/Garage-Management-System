@@ -17,6 +17,8 @@ namespace GarageUI
         private Point vehicleFieldsLocation = new Point(0, 50);
         private Point energySystemFieldsLocation = new Point(300, 50);
 
+        private GarageSystem _garage => GarageSystem.Instance;
+
         public AddVehicleForm()
         {
             InitializeComponent();
@@ -247,7 +249,7 @@ namespace GarageUI
             numericUpDownFuelLevel.Increment = 1m;
 
         }
-        private float getCurrentEnergyLevel()
+        public float GetCurrentEnergyLevel()
         {
             return 2.2f;
         }
@@ -255,15 +257,15 @@ namespace GarageUI
         {
             try
             {
-                eVehicleType selectedType = getSelectedVehicleType();
+                eVehicleType selectedType = GetSelectedVehicleType();
 
                 Vehicle vehicle = VehicleFactory.CreateVehicle(selectedType);
 
-                float energyLevel = getCurrentEnergyLevel();
+                float energyLevel = GetCurrentEnergyLevel();
                 // Configure the vehicle using a builder pattern
                 VehicleBuilder builder = VehicleFactory.CreateBuilder(selectedType, vehicle);
                 
-                VehicleInfo vehicleInfo = getVehicleInfo();
+                VehicleInfo vehicleInfo = GetVehicleInfo();
                 builder.WithVehicleInfo(vehicleInfo);
 
                 if (vehicle is Car)
@@ -298,7 +300,7 @@ namespace GarageUI
 
                 // Add the vehicle to your garage management system or do other processing
                 // ...
-                OwnerInfo ownerInfo = getOwnerInfo();
+                OwnerInfo ownerInfo = GetOwnerInfo();
 
 
                 // Clear the form or perform other post-addition actions
@@ -321,15 +323,15 @@ namespace GarageUI
             //TODO
         }
 
-        private VehicleInfo getVehicleInfo()
+        public VehicleInfo GetVehicleInfo()
         {
-            string model = getModelName();
-            int year = getVehicleYear();
-            string licenseNumber = getLicenseNumber();
+            string model = GetModelName();
+            int year = GetVehicleYear();
+            string licenseNumber = GetLicenseNumber();
             return new VehicleInfo(model, year, licenseNumber);
 
         }
-        private int getVehicleYear()
+        public int GetVehicleYear()
         {
             string selectedYearString = comboBoxYear.SelectedItem as string;
             if (!string.IsNullOrEmpty(selectedYearString) && int.TryParse(selectedYearString, out int selectedYear))
@@ -341,7 +343,7 @@ namespace GarageUI
                 throw new ArgumentException("Invalid year input. Please enter a valid year.");
             }
         }
-        private string getModelName()
+        public string GetModelName()
         {
             string modelName = textBoxModelName.Text.Trim(); // Get the text from the TextBox and remove leading/trailing whitespace.
 
@@ -354,12 +356,12 @@ namespace GarageUI
             return modelName; 
         }
 
-        private string getLicenseNumber()
+        public string GetLicenseNumber()
         {
             string licenseNumber = textBoxLicenseNumber.Text;
             return licenseNumber;
         }
-        private OwnerInfo getOwnerInfo()
+        public OwnerInfo GetOwnerInfo()
         {
             string name = getOwnerFullName();
             string phoneNumber = getOwnerPhoneNumber();
@@ -386,7 +388,7 @@ namespace GarageUI
             return inputValue;
         }
 
-        private eVehicleType getSelectedVehicleType()
+        public eVehicleType GetSelectedVehicleType()
         {
             eVehicleType selectedType;
 
@@ -439,23 +441,6 @@ namespace GarageUI
             return radioButtonTruck.Checked && radioButtonFuelTruck.Checked;
         }
 
-        private void textBoxLicenseNumber_Leave(object sender, EventArgs e)
-        {
-            string licenseNumber = textBoxLicenseNumber.Text;
-
-            // Perform validation (you can replace this with your own validation logic)
-            if (string.IsNullOrWhiteSpace(licenseNumber))
-            {
-                // Invalid input, display an error message
-                MessageBox.Show("License number cannot be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                // Set focus back to the TextBox
-                textBoxLicenseNumber.Focus();
-            }
-            else
-            {
-                // Valid input
-            }
-        }
+  
     }
 }

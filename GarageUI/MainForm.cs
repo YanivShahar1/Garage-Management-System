@@ -8,10 +8,13 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
+using GarageLogic;
+
 namespace GarageUI
 {
     public partial class MainForm : Form
     {
+        private GarageSystem _garage => GarageSystem.Instance;
         public MainForm()
         {
             InitializeComponent();
