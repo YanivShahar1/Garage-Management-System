@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 
 using GarageLogic.Vehicles;
+using GarageLogic.Info;
 
 namespace GarageLogic
 {
     /// <summary>
     /// Represents a garage for storing and managing vehicles.
     /// </summary>
-    public sealed class Garage
+    public sealed class GarageSystem
     {
-        private static Garage instance;
+        private static GarageSystem instance;
         private static readonly object lockObject = new object();
 
-        private List<Vehicle> vehicles;
-
-        private Garage()
+        private readonly Dictionary<string, Vehicle> vehiclesByLicense;
+        private readonly Dictionary<string, OwnerInfo> OwnerByLicense;
+        private GarageSystem()
         {
-            vehicles = new List<Vehicle>();
+            vehiclesByLicense = new Dictionary<string, Vehicle>();
+            OwnerByLicense = new Dictionary<string, OwnerInfo>();
         }
 
         /// <summary>
-        /// Gets the single instance of the <see cref="Garage"/> class.
+        /// Gets the single instance of the <see cref="GarageSystem"/> class.
         /// </summary>
-        public static Garage Instance
+        public static GarageSystem Instance
         {
             get
             {
@@ -34,7 +36,7 @@ namespace GarageLogic
                     {
                         if (instance == null)
                         {
-                            instance = new Garage();
+                            instance = new GarageSystem();
                         }
                     }
                 }
@@ -45,26 +47,28 @@ namespace GarageLogic
         /// <summary>
         /// Adds a vehicle to the garage.
         /// </summary>
+        /// <param name="ownerInfo">The information about the owner of the vehicle.</param>
         /// <param name="vehicle">The vehicle to add.</param>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="vehicle"/> is null.</exception>
         /// <exception cref="InvalidOperationException">Thrown if a vehicle with the same license number already exists in the garage.</exception>
-        public void AddVehicle(Vehicle vehicle)
+        public void AddVehicle(Vehicle vehicle, OwnerInfo ownerInfo)
         {
-            if (vehicle == null)
+            if (vehicle == null || ownerInfo == null)
             {
-                throw new ArgumentNullException(nameof(vehicle), "Vehicle cannot be null.");
+                throw new ArgumentNullException("Vehicle and ownerInfo cannot be null.");
             }
-
             lock (lockObject)
             {
+
                 if (IsVehicleInGarage(vehicle.Info.LicenseNumber))
                 {
                     throw new InvalidOperationException("A vehicle with the same license number already exists in the garage.");
                 }
 
-                vehicles.Add(vehicle);
+                vehiclesByLicense[vehicle.Info.LicenseNumber] = vehicle;
+                OwnerByLicense[vehicle.Info.LicenseNumber] = ownerInfo;
             }
         }
+
 
         /// <summary>
         /// Removes a vehicle from the garage by its license number.
@@ -72,14 +76,18 @@ namespace GarageLogic
         /// <param name="licenseNumber">The license number of the vehicle to remove.</param>
         public void RemoveVehicle(string licenseNumber)
         {
-            lock (lockObject)
+            if (IsVehicleInGarage(licenseNumber))
             {
-                var vehicleToRemove = GetVehicleByLicenseNumber(licenseNumber);
-                if (vehicleToRemove != null)
+                lock (lockObject)
                 {
-                    vehicles.Remove(vehicleToRemove);
+                    if (IsVehicleInGarage(licenseNumber))
+                    {
+                        vehiclesByLicense.Remove(licenseNumber);
+                        OwnerByLicense.Remove(licenseNumber);
+                    }
                 }
             }
+             
         }
 
         /// <summary>
@@ -90,7 +98,7 @@ namespace GarageLogic
         {
             lock (lockObject)
             {
-                return vehicles.ToList();
+                return new List<Vehicle>(vehiclesByLicense.Values);
             }
         }
 
@@ -101,24 +109,42 @@ namespace GarageLogic
         /// <returns>The vehicle with the specified license number, or null if not found.</returns>
         public Vehicle GetVehicleByLicenseNumber(string licenseNumber)
         {
-            lock (lockObject)
+            if (IsVehicleInGarage(licenseNumber))
             {
-                return vehicles.FirstOrDefault(vehicle => vehicle.Info.LicenseNumber == licenseNumber);
+                lock (lockObject)
+                {
+                    if (IsVehicleInGarage(licenseNumber))
+                    {
+                        return vehiclesByLicense[licenseNumber];
+                    }
+                    
+                }
+
             }
+            return null;
         }
 
-        /// <summary>
-        /// Checks if a vehicle with the specified license number is in the garage.
-        /// </summary>
-        /// <param name="licenseNumber">The license number to check.</param>
-        /// <returns>True if a vehicle with the specified license number is in the garage; otherwise, false.</returns>
         public bool IsVehicleInGarage(string licenseNumber)
         {
             lock (lockObject)
             {
-                return vehicles.Any(vehicle => vehicle.Info.LicenseNumber == licenseNumber);
+                return vehiclesByLicense.ContainsKey(licenseNumber);
             }
         }
-    }
 
+        public OwnerInfo GetOwnerFullName(string licenseNumber)
+        {
+            if (IsVehicleInGarage(licenseNumber))
+            {
+                lock (lockObject)
+                {
+                    if (IsVehicleInGarage(licenseNumber))
+                    {
+                        return OwnerByLicense[licenseNumber];
+                    }
+                }
+            }
+            return null;
+        }
+    }
 }
